@@ -19,6 +19,7 @@ abstract class circleBase implements Comparable<circleBase> {
 
   // Abstract methods
   public abstract double calculateSurfaceArea();
+  public abstract String getType();
 
   // Public methods
   @Override
