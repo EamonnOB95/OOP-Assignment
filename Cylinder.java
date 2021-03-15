@@ -27,6 +27,10 @@ public class Cylinder extends circleBase {
     return (2*Math.PI*r*h)+(2*Math.PI*Math.pow(r,2));
   }
 
+  public String getType() {
+    return "Cylinder";
+  }
+
   // Getters and setters
   public void setHeight(int aHeight) {
     this.height = aHeight;
