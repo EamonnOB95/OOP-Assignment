@@ -27,6 +27,10 @@ public class Cone extends circleBase {
     return Math.PI*r*(r+Math.sqrt(Math.pow(h,2)+Math.pow(r,2)));
   }
 
+  public String getType() {
+    return "Cone";
+  }
+
   // Getters and setters
   public void setHeight(int aHeight) {
     this.height = aHeight;
