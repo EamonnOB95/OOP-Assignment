@@ -1,41 +1,40 @@
-public class Cylinder extends circleBase {
-  // Class data
-  private int height;
+public class Cylinder extends CircleBase {
+    // Class data
+    private int height;
 
-  // Constructors
-  public Cylinder() {
-    super();
-    this.height = 1;
-  }
-  public Cylinder(int aRadius, int aHeight) {
-    super(aRadius);
-    this.height = aHeight;
-  }
+    // Constructors
+    public Cylinder() {
+        super();
+        setHeight(1);
+    }
 
-  // Public methods
-  public double calculateVolume() {
-    // Formula for cylinder volume 
-    // πr^2h
-    double r=this.radius*1.0, h=this.height*1.0;
-    return Math.PI*Math.pow(r,2)*h;
-  }
+    public Cylinder(int radius, int height) {
+        super(radius);
+        setHeight(height);
+    }
 
-  public double calculateSurfaceArea() {
-    // Forumla for cylinder surface area
-    // 2πrh + 2πr^2 
-    double r=this.radius*1.0, h=this.height*1.0;
-    return (2*Math.PI*r*h)+(2*Math.PI*Math.pow(r,2));
-  }
+    // Public methods
+    @Override
+    public double surfaceArea() {
+        return ((2 * Math.PI * getRadius() * getHeight()) + (2 * Math.PI * Math.pow(this.getRadius(), 2)));
+    }
 
-  public String getType() {
-    return "Cylinder";
-  }
+    public double volume() {
+        return (Math.PI * Math.pow(getRadius(), 2) * getHeight());
+    }
 
-  // Getters and setters
-  public void setHeight(int aHeight) {
-    this.height = aHeight;
-  }
-  public int getHeight() {
-    return this.height;
-  }
+    @Override
+    public String getType() {
+        return "Cylinder";
+    }
+
+    // Getters and setters
+    public int getHeight() {
+        return this.height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
 }
+
