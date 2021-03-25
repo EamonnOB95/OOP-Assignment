@@ -6,7 +6,7 @@ public class AssessmentDriver {
   public static void main(String[] args) {
     // Variables
     int choice, radius, height;
-    ArrayList<circleBase> objects = new ArrayList<>();
+    ArrayList<CircleBase> objects = new ArrayList<>();
     String input;
 
     // Create ArrayList of 5 circleBase Objects
@@ -57,10 +57,10 @@ public class AssessmentDriver {
   }
 
   // Print list of circleBase objects using a html table in a JOptionPane window
-  public static void printCircleBaseObjects(ArrayList<circleBase> objects) {
+  public static void printCircleBaseObjects(ArrayList<CircleBase> objects) {
     // Variables
     StringBuilder output = new StringBuilder();
-    circleBase obj;
+    CircleBase obj;
 
     // Table opening tags
     output.append("<HTML><table>");
@@ -70,12 +70,12 @@ public class AssessmentDriver {
     obj = objects.get(0);
     output.append("<tr><th>Smallest object:</th>");
     output.append("<td>" + obj.getType() + "</td>");
-    output.append("<td>" + String.format("%.2f", obj.calculateSurfaceArea()) + "</td></tr>");
+    output.append("<td>" + String.format("%.2f", obj.surfaceArea()) + "</td></tr>");
     // Biggest object
     obj = objects.get(objects.size()-1);
     output.append("<tr><th>Biggest object:</th>");
     output.append("<td>" + obj.getType() + "</td>");
-    output.append("<td>" + String.format("%.2f", obj.calculateSurfaceArea()) + "</td></tr>");
+    output.append("<td>" + String.format("%.2f", obj.surfaceArea()) + "</td></tr>");
 
     // Count of objects
     output.append("<tr><th colspan=\"2\">Number of objects entered:</th><td>" + objects.size() + "</td></tr>");
