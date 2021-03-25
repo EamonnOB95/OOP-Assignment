@@ -1,43 +1,49 @@
-abstract class circleBase implements Comparable<circleBase> {
-  // Class data
-  private String colour;
-  protected int radius;
+public abstract class CircleBase implements Comparable<CircleBase> {
+    // Class data
+    private String colour;
+    protected int radius;
 
-  // Constructors
-  public circleBase() {
-    this.radius = 1;
-    this.colour = "No Colour";
-  }
-  public circleBase(int aRadius) {
-    this.radius = aRadius;
-    this.colour = "No Colour";
-  }
-  public circleBase(int aRadius, String colour) {
-    this.radius = aRadius;
-    this.colour = colour;
-  }
+    // Constructors
+    public CircleBase() {
+        this.radius = 1;
+        this.colour = "";
+    }
 
-  // Abstract methods
-  public abstract double calculateSurfaceArea();
-  public abstract String getType();
+    public CircleBase(int radius) {
+        this.radius = radius;
+        this.colour = "";
+    }
 
-  // Public methods
-  @Override
-  public int compareTo(circleBase c) {
-    return this.calculateSurfaceArea()<c.calculateSurfaceArea() ? -1 : this.calculateSurfaceArea()==c.calculateSurfaceArea() ? 0 : 1;
-  }
+    public CircleBase(int radius, String colour) {
+        this.radius = radius;
+        this.colour = colour;
+    }
 
-  // Getters and setters
-  public void setColour(String aColour) {
-    this.colour = aColour;
-  }
-  public String getColour() {
-    return this.colour;
-  }
-  public void setRadius(int aRadius) {
-    this.radius = aRadius;
-  }
-  public int getRadius()  {
-    return this.radius;
-  }
+    // Abstract methods
+    public abstract double surfaceArea();
+    public abstract String getType();
+
+    // Implemented Methods
+    @Override
+    public int compareTo(CircleBase circle) {
+        return Double.compare(this.surfaceArea(), circle.surfaceArea());
+    }
+
+    // Getters and setters
+    public String getColour() {
+        return this.colour;
+    }
+
+    public void setColour(String colour) {
+        this.colour = colour;
+    }
+
+    public int getRadius() {
+        return this.radius;
+    }
+
+    public void setRadius(int radius) {
+        this.radius = radius;
+    }
+
 }
